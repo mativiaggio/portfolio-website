@@ -23,6 +23,9 @@ import hbs from "../config/handlebars.config.js";
 
 // Import here your admin routes
 // Example: import adminRouter from "../routes/admin/admin.router.js";
+import adminRouter from "../routes/admin/admin.router.js";
+
+initializePassport(passport); // Uncomment the following line if you want to use passport
 
 // Import here your client routes
 // Example: import clientRouter from "../routes/client/client.router.js";
@@ -93,11 +96,11 @@ app.use(setLayout);
 // Admin routes
 // Example: app.use("/api/admin/sessions", adminSessionRouter);
 // Example: app.use("/admin", adminRouter);
+app.use("/", adminRouter);
 
 // Client routes
 // Example: app.use("/api/client/sessions", clientSessionRouter);
 // Example: app.use("/", clientRouter);
-
 app.use("/", clientRouter);
 
 // Start the server and listen on the specified port

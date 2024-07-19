@@ -46,5 +46,14 @@ const privateAccess = async (req, res, next) => {
 //     // Example: adminSidebarItems,
 //   });
 // });
+adminRouter.get("/admin", (req, res) => {
+  const title = "Admin Panel";
+  const description = "Admin panel";
+  res.render("admin/home", {
+    isLoggedIn: true,
+    title,
+    description,
+  });
+});
 
 export default adminRouter;
